@@ -1,0 +1,340 @@
+[
+    {
+        "item_name":"Cappuccino",
+        "price":29,
+        "category":"coffee",
+        "image":"https://recettes.vedrenne.fr/1269-medium_default/gingerbread-cappuccino.jpg"
+    },
+    {
+        "item_name":"Espresso Euphoria",
+        "price":25,
+        "category":"coffee",
+        "image":"https://blogstudio.s3.theshoppad.net/coffeeheroau/ec178d83e5f597b162cda1e60cb64194.jpg"
+    },
+    {
+        "item_name":"Flat white",
+        "price":299,
+        "category":"coffee",
+        "image":"https://static.toiimg.com/thumb/86699095.cms?imgsize=59654&width=800&height=800"
+    },
+    {
+        "item_name":"Irish coffee",
+        "price":40,
+        "category":"coffee",
+        "image":"https://www.thespruceeats.com/thmb/BaTQiJBdsmkbQvBZO6HaoeBoNgE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/original-irish-coffee-recipe-759311-Hero-5b759d4b46e0fb005089915e.jpg"
+    },
+    {
+        "item_name":"Dark Chocolate Coffee",
+        "price":299,
+        "category":"coffee",
+        "image":"https://static.toiimg.com/thumb/88316599.cms?imgsize=63826&width=800&height=800"
+    },
+    {
+        "item_name":"Frappuccino",
+        "price":299,
+        "category":"coffee",
+        "image":"https://www.starbucks.com.au/assets/uploads/2023/08/sbx20181113-21425-caramelfrapp-onwhite-corelib-srgb.png"
+    },
+    {
+        "item_name":"Cortado Coffee",
+        "price":30,
+        "category":"coffee",
+        "image":"https://coffeeaffection.com/wp-content/uploads/2021/02/Cortado.jpg"
+    },
+    {
+        "item_name":"Mocha",
+        "price":299,
+        "category":"coffee",
+        "image":"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mocha-001-8301418.jpg?resize=768,574"
+    },
+    {
+        "item_name":"Chicken Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Chicken-Sandwich.jpg"
+    },
+    {
+        "item_name":"Egg Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Egg-Sandwich.jpg"
+    },
+    {
+        "item_name":"Chicken Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Chicken-Sandwich.jpg"
+    },
+    {
+        "item_name":"Grilled Cheese Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Grilled-Cheese.jpg"
+    },
+    {
+       
+        "item_name":"Chicken Pesto Panini",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://mojo.generalmills.com/api/public/content/xLGnarapHEWZB_yf_1nPRA_gmi_hi_res_jpeg.jpeg?v=507f4c0d&t=466b54bb264e48b199fc8e83ef1136b4"
+    },
+    {
+        "item_name":"Grilled Chicken Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Grilled-Chicken-Sandwich.jpg"
+    },
+    {
+        "item_name":"Cheese Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Cheese-Sandwich.jpg"
+    },
+    {
+        "item_name":"Veg Mayo Sandwich",
+        "price":299,
+        "category":"sandwich",
+        "image":"https://www.indianhealthyrecipes.com/wp-content/uploads/2022/07/mayonnaise-sandwich-mayo-sandwich.jpg"
+    },
+    {
+        "item_name":"BBQ Chicken Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://i.ibb.co/PzR9Cpn/BBQ-Chicken-Pizza.jpg"
+    },
+    {
+        "item_name":"Veggie Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_570541132.jpg.webp"
+    },
+    {
+      
+        "item_name":"BBQ Chicken Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://i.ibb.co/PzR9Cpn/BBQ-Chicken-Pizza.jpg"
+    },
+    {
+        "item_name":"Cheese Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://kitchenatics.com/wp-content/uploads/2020/09/Cheese-pizza-1.jpg"
+    },
+    {
+        "item_name":"Pepperoni Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://www.ezcater.com/lunchrush/wp-content/uploads/sites/2/2017/10/shutterstock_514457074.jpg.webp"
+    },
+    {
+        "item_name":"Hawaiian Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://www.kayscleaneats.com/wp-content/uploads/2020/07/unadjustednonraw_thumb_a8b0.jpg"
+    },
+    {
+        "item_name":"Pesto Chicken Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://i.ibb.co/Lr3zXY0/Chicken-Pesto-Pizza.jpg"
+    },
+    {
+        "item_name":"Supreme Pizza",
+        "price":299,
+        "category":"pizza",
+        "image":"https://www.southernliving.com/thmb/j_6gABRIAMegN6RFHxOgbUqBxjA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg"
+    },
+    {
+        "item_name":"French Fries",
+        "price":299,
+        "category":"fried",
+        "image":"https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1662474181&s=f6b09b96f732330eca2aae43140b3ffa"
+    },
+    {
+        "item_name":"Fried chicken",
+        "price":299,
+        "category":"fried",
+        "image":"https://static.toiimg.com/thumb/61589069.cms?imgsize=788682&width=800&height=800"
+    },
+    {
+        "item_name":"Fish Cutlet",
+        "price":299,
+        "category":"fried",
+        "image":"https://cdn.myportfolio.com/fb82885b-43aa-4781-985d-5c09e1993293/f13a64c2-9807-4c6b-adbe-e50d3b3a3003_rw_1200.jpg?h=396f64c36877483bcc86f1d58e4ef94a"
+    },
+    {
+        "item_name":"Crispy Baked Chicken Wings",
+        "price":299,
+        "category":"fried",
+        "image":"https://i.ibb.co/QpStWfS/CRISPY-BAKED-CHICKEN-WINGS.jpg"
+    },
+    {
+        "item_name":"Chicken Tenders",
+        "price":299,
+        "category":"fried",
+        "image":"https://www.eatingwell.com/thmb/1CF4hEuKg5c53T7dSLwTPjqer6w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/air-fryer-chicken-tenders-8bf02c6e6f1a465387d82d841d3e9574.jpg"
+    },
+    {
+        "item_name":"Egg Roll",
+        "price":299,
+        "category":"fried",
+        "image":"https://www.allrecipes.com/thmb/VC_25bp-2QJ9XjxRS8k0JLaPMKI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14704-best-egg-rolls-DDMFS-4x3-490f99efee9646c8b5de93b4e2f6f963.jpg"
+    },
+    {
+        "item_name":"Chicken Lollipop",
+        "price":299,
+        "category":"fried",
+        "image":"https://i.ibb.co/vQLWyXT/Chicken-Lollipop.jpg"
+    },
+    {
+        "item_name":"Popcorn Shrimp",
+        "price":299,
+        "category":"fried",
+        "image":"https://bellyfull.net/wp-content/uploads/2021/05/Popcorn-Shrimp-blog.jpg"
+    },
+    {
+        "item_name":"Egg Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://theheirloompantry.co/wp-content/uploads/2022/07/fried-egg-burger-the-heirloom-pantry-2.jpg"
+    },
+    {
+        "item_name":"Chicken Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://www.kimscravings.com/wp-content/uploads/2022/06/Chicken-Burgers-5.jpg"
+    },
+    {
+        "item_name":"Naga Chicken Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://i.ytimg.com/vi/coSZIQVdvoU/maxresdefault.jpg"
+    },
+    {
+        "item_name":"Grilled Chicken Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://i.ibb.co/GtyWWSx/Grilled-chicken-burgers.jpg"
+    },
+    {
+        "item_name":"Bbq Chicken Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://i.ibb.co/GtyWWSx/Grilled-chicken-burgers.jpg"
+    },
+    {
+        "item_name":"Veggi Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://www.noracooks.com/wp-content/uploads/2023/04/veggie-burgers-1-2.jpg"
+    },
+    {
+        "item_name":"Smashed Chicken Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://i.ibb.co/2gcmNyy/Smashed-Chicken-Burgers.jpg"
+    },
+    {
+        "item_name":"Mushroom Burger",
+        "price":299,
+        "category":"burger",
+        "image":"https://i.ibb.co/X8g0TdC/mushroom-burger.jpg"
+    },
+    {
+        "item_name":"Fruit Custard",
+        "price":299,
+        "category":"dessert",
+        "image":"https://cdn1.foodviva.com/static-content/food-images/dessert-recipes/fruit-custard/fruit-custard.jpg"
+    },
+    {
+        "item_name":"Black Forest Pastry",
+        "price":299,
+        "category":"dessert",
+        "image":"https://i.ibb.co/93xS7BC/Black-Forest-Pastry.jpg"
+    },
+    {
+        "item_name":"Chocolate Cupcake",
+        "price":299,
+        "category":"dessert",
+        "image":"https://handletheheat.com/wp-content/uploads/2021/02/chocolate-cupcakes-SQUARE.png"
+    },
+    {
+        "item_name":"Mango Pudding",
+        "price":299,
+        "category":"dessert",
+        "image":"https://www.sharmispassions.com/wp-content/uploads/2022/06/MangoPudding5-500x500.jpg"
+    },
+    {
+        "item_name":"Fruit Salad",
+        "price":299,
+        "category":"dessert",
+        "image":"https://lh3.googleusercontent.com/yj0QOGuB0YaqOKumonOovnG1osynAuKu3_EgH2UOmgxKYWXylSCogObUOXyq-h9slu_CUmbsXVXzFoyt3Beupe4rZwujY13u2x1J_SByli4Vbwp1aOI"
+    },
+    {
+        "item_name":"Molten Chocolate Brownie",
+        "price":299,
+        "category":"dessert",
+        "image":"https://i.ibb.co/4sv3w9x/Molten-Chocolate-Brownie.jpg"
+    },
+    {
+        "item_name":"Banana split",
+        "price":299,
+        "category":"dessert",
+        "image":"https://img.taste.com.au/d1GnSRiR/w720-h480-cfill-q80/taste/2016/11/banana-split-17976-1.jpeg"
+    },
+    {
+        "item_name":"Amaretto Cheesecake",
+        "price":299,
+        "category":"dessert",
+        "image":"https://img.taste.com.au/WERrsITv/w720-h480-cfill-q80/taste/2016/11/amaretto-cheesecake-9376-1.jpeg"
+    },
+    {
+        "item_name":"CocaCola",
+        "price":299,
+        "category":"drinks",
+        "image":"https://dr6svciluuqrd.cloudfront.net/products/RB6CGIn5b0yOZzRRuILg1MvLeorSNV1hjSQLMNTV.png"
+    },
+    {
+        "item_name":"Fanta",
+        "price":299,
+        "category":"drinks",
+        "image":"https://shoponclick.ng/wp-content/uploads/2020/08/Fanta-Orange-Flavoured-Drink-50cl.png"
+    },
+    {
+        "item_name":"Sprite",
+        "price":299,
+        "category":"drinks",
+        "image":"https://www.cokesolutions.com/content/dam/cokesolutions/us/images/Products/Sprite-glass.jpg"
+    },
+    {
+        "item_name":"7Up",
+        "price":299,
+        "category":"drinks",
+        "image":"https://splagro.com/wp-content/uploads/2021/11/16022021.1613414036.SNCPSG10.obj_.0.1.jpg.oe_.jpg.pf_.jpg.1350nowm.jpg.1350x-600x600.jpg"
+    },
+    {
+        "item_name":"Pepsi",
+        "price":299,
+        "category":"drinks",
+        "image":"https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51pGxfs4w1L.jpg"
+    },
+    {
+        "item_name":"Mirinda",
+        "price":299,
+        "category":"drinks",
+        "image":"https://ph-test-11.slatic.net/p/1d17b61f4458a9f55390a26409dd5ea4.png"
+    },
+    {
+        "item_name":"Litchi",
+        "price":299,
+        "category":"drinks",
+        "image":"https://www.pranfoods.net/sites/default/files/2023-09/pran_litchi_480x480ml.png"
+    },
+    {
+        "item_name":"Tango",
+        "price":299,
+        "category":"drinks",
+        "image":"https://www.pranfoods.net/sites/default/files/tango_bottle_03.png"
+    }
+]

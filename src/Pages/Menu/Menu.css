@@ -1,0 +1,39 @@
+.product {
+    position: relative;
+    border: 1px solid rgb(209, 209, 209);
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .product-img {
+    width: 100%; /* Make the image responsive */
+    height: 320px; /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+  }
+  .add-to-cart {
+    background-color: #a865b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer; /* Add cursor pointer */
+  }
+  .btn-div {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Add margin-top as needed */
+  }
+  .login-btn {
+    border-radius: 5px;
+    background: var(--PINK, #032174);
+    font-style: normal;
+    line-height: 24px;
+    text-align: center; /* Center text vertically */
+  }
