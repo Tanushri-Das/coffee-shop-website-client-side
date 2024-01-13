@@ -1,0 +1,15 @@
+.form-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+  color: #333;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form {
+    border-radius: 6px;
+    border: 1px solid #ababab;
+    background: rgba(255, 255, 255, 0.2);
+  }

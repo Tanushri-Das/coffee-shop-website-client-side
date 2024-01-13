@@ -1,0 +1,10 @@
+.contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://silicondales.com/wp-content/uploads/2018/09/coffee-in-cup-and-artisticly-spilled-sack-of-coffee-beans.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,33 @@
+[
+    {
+        "image":"https://recettes.vedrenne.fr/1269-medium_default/gingerbread-cappuccino.jpg",
+        "category_name":"Coffee"
+    },
+    {
+        "image":"https://www.edelweissbakeryfl.com/blog/wp-content/uploads/2022/01/Chicken-Sandwich.jpg",
+        "category_name":"Sandwich"
+    },
+    {
+        "image":"https://static.toiimg.com/thumb/61589069.cms?imgsize=788682&width=800&height=800",
+        "category_name":"Fried"
+    },
+    {
+        "image":"https://theheirloompantry.co/wp-content/uploads/2022/07/fried-egg-burger-the-heirloom-pantry-2.jpg",
+        "category_name":"Burger"
+    },
+    {
+      
+        "image":"https://i.ibb.co/PzR9Cpn/BBQ-Chicken-Pizza.jpg",
+        "category_name":"Pizza"
+    },
+    {
+       
+        "image":"https://www.sharmispassions.com/wp-content/uploads/2022/06/MangoPudding5-500x500.jpg",
+        "category_name":"Dessert"
+    },
+    {
+        
+        "image":"https://shoponclick.ng/wp-content/uploads/2020/08/Fanta-Orange-Flavoured-Drink-50cl.png",
+        "category_name":"Drinks"
+    }
+]

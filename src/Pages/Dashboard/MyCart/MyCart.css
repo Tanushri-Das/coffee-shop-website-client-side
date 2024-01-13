@@ -1,0 +1,113 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.qty-decrease {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.qty {
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+.remove:hover {
+  background-color: #d32f2f;
+}
+
+.total {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.checkout-text {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.checklist-table {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.table-wrapper {
+  overflow: auto;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .checklist-table {
+    padding: 0 40px;
+  }
+
+  .qty-decrease {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .checklist-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  .qty-decrease {
+    font-size: 16px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 559px) {
+  .qty-decrease,
+  .qty {
+    display: inline-block;
+    margin: 10px 2px;
+  }
+  .qty {
+    font-size: 14px;
+  }
+}

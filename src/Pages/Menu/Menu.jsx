@@ -1,11 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../../redux/searchSlice";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./Menu.css";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import useCart from "../../Hooks/useCart";
+import { useLocation, useNavigate } from "react-router-dom";
+import { addToCart } from "../../redux/cartSlice";
 
 const Menu = () => {
   const dispatch = useDispatch();
+  const { user } = useContext(AuthContext);
+  const [, refetch] = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
   const searchTerm = useSelector((state) => state.search.searchTerm);
   const [priceFilter, setPriceFilter] = useState({
     min: 0,
@@ -19,7 +28,7 @@ const Menu = () => {
   const itemsPerPage = 6;
 
   useEffect(() => {
-    fetch("http://localhost:5000/menu")
+    fetch("https://coffee-shop-website-server-side.vercel.app/menu")
       .then((res) => res.json())
       .then((data) => {
         setMenu(data);
@@ -49,10 +58,9 @@ const Menu = () => {
     const nameMatch = product.item_name
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
-    console.log(nameMatch);
+
     const categoryMatch =
       !selectedCategory || product.category === selectedCategory;
-    console.log(categoryMatch);
 
     const priceMatch =
       (!priceFilter.min || product.price >= priceFilter.min) &&
@@ -76,6 +84,59 @@ const Menu = () => {
     setIsPrevDisabled(currentPage === 1);
     setIsNextDisabled(currentPage === Math.ceil(menu.length / itemsPerPage));
   }, [currentPage, menu.length, itemsPerPage]);
+
+  const handleAddToCart = (product) => {
+    if (user && user.email) {
+      const { _id, item_name, price, image } = product;
+
+      dispatch(addToCart({ _id, item_name, price, image, email: user.email })); // Update Redux store
+
+      // Send request to backend to add item to cart
+      fetch("https://coffee-shop-website-server-side.vercel.app/carts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productId: _id,
+          item_name,
+          price,
+          image,
+          email: user.email,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.insertedId) {
+            refetch();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Food added to the cart.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      Swal.fire({
+        title: "Please login to order the food",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
+
   return (
     <div>
       <div className="flex">

@@ -1,5 +1,4 @@
 header {
-  background-color: #3944bc;
   color: #fff;
   padding: 20px 60px;
 }
@@ -8,7 +7,7 @@ header {
 }
 .app-name {
   text-decoration: none;
-  color: white;
+
   font-size: 30px;
   font-weight: 800;
   display: flex;
