@@ -47,7 +47,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div className="mb-20 md:mx-12 xl:mx-[135px] relative">
+    <div className="mb-20 mx-3 md:mx-12 xl:mx-20 relative">
       <h2 className="text-4xl font-bold mb-5 text-center">
         Explore Our Categories
       </h2>

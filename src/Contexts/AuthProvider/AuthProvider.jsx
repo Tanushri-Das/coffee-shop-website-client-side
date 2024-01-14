@@ -38,12 +38,7 @@ const AuthProvider = ({ children }) => {
       displayName: name
     });
   };
-//   const updateUserProfile = (name, photo) => {
-//     return updateProfile(auth.currentUser, {
-//       displayName: name,
-//       photoURL: photo,
-//     });
-//   };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);

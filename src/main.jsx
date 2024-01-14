@@ -8,11 +8,9 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import AuthProvider from "./Contexts/AuthProvider/AuthProvider.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "./Contexts/ThemeProvider/ThemeProvider.jsx";
 
 const queryClient = new QueryClient({
   defaultQueryOptions: {
-    // Use 'defaultQueryOptions' instead of 'defaultOptions'
     queries: {
       staleTime: Infinity,
       cacheTime: Infinity,
@@ -24,11 +22,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <HelmetProvider>
-          <ThemeProvider>
-            <Provider store={store}>
-              <RouterProvider router={routes} />
-            </Provider>
-          </ThemeProvider>
+          <Provider store={store}>
+            <RouterProvider router={routes} />
+          </Provider>
         </HelmetProvider>
       </AuthProvider>
     </QueryClientProvider>

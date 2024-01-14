@@ -6,6 +6,7 @@ import About from '../About/About'
 import Recommends from '../Recommends/Recommends'
 import ChooseUs from '../ChooseUs/ChooseUs'
 import ContactUs from '../ContactUs/ContactUs'
+// import Check from '../Check/Check'
 
 const Home = () => {
   return (
@@ -16,7 +17,9 @@ const Home = () => {
       <ChooseUs/>
       <Recommends/>
       <Testimonials/>
+      {/* <Check/> */}
       <ContactUs/>
+      
     </div>
   )
 }

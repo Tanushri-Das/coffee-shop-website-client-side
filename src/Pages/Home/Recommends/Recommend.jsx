@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/cartSlice";
 import useCart from "../../../Hooks/useCart";
 
-const Recommend = ({ recommend }) => {
+const Recommend = ({ recommend, isVisible }) => {
+  console.log(recommend);
   const dispatch = useDispatch();
   const [, refetch] = useCart();
   const { user } = useContext(AuthContext);
@@ -16,9 +17,8 @@ const Recommend = ({ recommend }) => {
     if (user && user.email) {
       const { _id, item_name, price, image } = recommend;
 
-      dispatch(addToCart({ _id, item_name, price, image, email: user.email })); // Update Redux store
+      dispatch(addToCart({ _id, item_name, price, image, email: user.email })); 
 
-      // Send request to backend to add item to cart
       fetch("https://coffee-shop-website-server-side.vercel.app/carts", {
         method: "POST",
         headers: {
@@ -64,7 +64,7 @@ const Recommend = ({ recommend }) => {
     }
   };
   return (
-    <div key={recommend.id} className="product">
+    <div key={recommend._id} className={`product ${isVisible ? "" : "hidden"}`}>
       <img
         src={recommend.image}
         alt={recommend.item_name}

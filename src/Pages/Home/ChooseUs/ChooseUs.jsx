@@ -30,7 +30,7 @@ const ChooseUs = () => {
   ];
 
   return (
-    <div className="mb-20 md:mx-12 xl:mx-[135px]">
+    <div className="mb-20 mx-3 md:mx-12 xl:mx-20">
       <h2 className="text-4xl font-bold mb-5 text-center">Why Choose Us</h2>
 
       <p className="text-[16px] text-center mb-8 px-16">

@@ -1,4 +1,4 @@
-header {
+/* header {
   color: #fff;
   padding: 20px 60px;
 }
@@ -36,8 +36,8 @@ header {
 .cart-count {
   position: absolute;
   top: -50%;
-  right:30px; /* Adjust the right position as needed */
-  transform: translateY(-50%); /* Center vertically */
+  right:30px; 
+  transform: translateY(-50%);
   background-color: white;
   color: black;
   font-weight: 800;
@@ -77,8 +77,8 @@ header {
   .cart-count {
     position: absolute;
     top:65%;
-    right:30px; /* Adjust the right position as needed */
-    transform: translateY(-50%); /* Center vertically */
+    right:30px; 
+    transform: translateY(-50%); 
     background-color: white;
     color: black;
     font-weight: 800;
@@ -108,7 +108,6 @@ header {
   }
 }
 
-/* Hide responsive menu when screen width is greater than 600px */
 @media screen and (min-width: 601px) {
   .responsive-menu {
     display: none;
@@ -126,4 +125,10 @@ header {
     font-size: 25px;
   }
 
+} */
+.header-bg{
+  background: rgba(21, 21, 21, 0.50);
+}
+li{
+  list-style: none;
 }
