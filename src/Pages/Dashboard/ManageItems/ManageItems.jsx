@@ -84,95 +84,49 @@ const ManageItems = () => {
     });
   };
   return (
-    <div>
-      <div className="font-bold uppercase flex justify-center mt-16 items-center">
-        <h3 className="text-3xl">Total items: {totalItems}</h3>
-      </div>
-      <div className="mt-10">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead>
-            <tr>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                #
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                ITEM IMAGE
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                ITEM NAME
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                Category
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                PRICE
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                ACTION
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {menu?.map((item, index) => (
-              <tr key={item._id}>
-                <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                  {index + 1}
-                </td>
-                <td className="flex justify-center">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img
-                        src={item.image}
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                  {item.item_name}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                  {item.category}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                  ${item.price}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                  <button
-                    className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 ms-3"
-                    onClick={() => handleEdit(item)}
-                  >
-                    <HiOutlinePencilAlt className="text-xl" />
-                  </button>
-                  <button
-                    onClick={() => handleDelete(item)}
-                    className="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 ms-3"
-                  >
-                    <FaTrashAlt className="text-lg" />
-                  </button>
-                </td>
+    <div className="my-10">
+      <h3 className="text-xl md:text-3xl text-center mb-8">
+        Total items : {totalItems}
+      </h3>
+      <div className="overflow-x-auto">
+        <div className="w-full lg:w-3/4 mx-auto">
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th className="text-sm md:text-[16px]">#</th>
+                <th className="text-sm md:text-[16px]">ITEM NAME</th>
+                <th className="text-sm md:text-[16px]">Category</th>
+                <th className="text-sm md:text-[16px]">PRICE</th>
+                <th className="text-sm md:text-[16px]">ACTION</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {menu?.map((item, index) => (
+                <tr key={item._id}>
+                  <td className="text-sm md:text-[16px]">{index + 1}</td>
+
+                  <td className="text-sm md:text-[16px]">{item.item_name}</td>
+                  <td className="text-sm md:text-[16px]">{item.category}</td>
+                  <td className="text-sm md:text-[16px]">${item.price}</td>
+                  <td className="text-sm md:text-[16px]">
+                    <button
+                      className="bg-green-600 text-white py-2 px-3 rounded-lg hover:bg-red-700 ms-3"
+                      onClick={() => handleEdit(item)}
+                    >
+                      <HiOutlinePencilAlt className="text-sm md:text-[16px]" />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(item)}
+                      className="ms-2 bg-red-600 text-white py-2 px-3 rounded-lg hover:bg-red-700"
+                    >
+                      <FaTrashAlt className="text-sm md:text-[16px]" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <EditModal
         key={editModalOpen ? "open" : "close"}

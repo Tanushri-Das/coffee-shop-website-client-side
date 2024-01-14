@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
+import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const AllUsers = () => {
@@ -13,7 +14,6 @@ const AllUsers = () => {
       return res.data;
     },
   });
-
   const handleDelete = (user) => {
     console.log(user._id);
     Swal.fire({
@@ -43,103 +43,74 @@ const AllUsers = () => {
       }
     });
   };
-  const handleMakeAdmin = user => {
-    fetch(`https://coffee-shop-website-server-side.vercel.app/users/admin/${user._id}`,{
-      method:'PATCH'
-    })
-    .then(res => res.json())
-    .then(data =>{
-      console.log(data)
-      if(data.modifiedCount){
-        refetch();
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: `${user.name} is an admin now!`,
-          showConfirmButton: false,
-          timer: 1500
-        })
+  const handleMakeAdmin = (user) => {
+    fetch(
+      `https://coffee-shop-website-server-side.vercel.app/users/admin/${user._id}`,
+      {
+        method: "PATCH",
       }
-    })
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is an admin now!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
-    <div>
-      <div className="font-bold uppercase flex justify-center mt-16 items-center">
-        <h3 className="text-3xl">Total users : {users.length}</h3>
-      </div>
-      <div className="mt-10">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                #
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                Name
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3  text-lg text-center font-medium"
-              >
-                Email
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                Role
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-lg text-center font-medium"
-              >
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {Array.isArray(users) &&
-              users.map((user, index) => (
+    <div className="my-10">
+      <h3 className="text-xl md:text-3xl text-center mb-8">
+        Total users : {users.length}
+      </h3>
+
+      <div className="overflow-x-auto">
+        <div className="w-full md:w-3/4 mx-auto">
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th className="text-sm md:text-[16px]">#</th>
+                <th className="text-sm md:text-[16px]">Name</th>
+                <th className="text-sm md:text-[16px]">Email</th>
+                <th className="text-sm md:text-[16px]">Role</th>
+                <th className="text-sm md:text-[16px]">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users?.map((user, index) => (
                 <tr key={user._id}>
-                  <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                    {index + 1}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                    {user.name}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
-                    {user.email}
-                  </td>
-                  <td className="text-lg">
+                  <td className="text-sm md:text-[16px]">{index + 1}</td>
+                  <td className="text-sm md:text-[16px]">{user.name}</td>
+                  <td className="text-sm md:text-[16px]">{user.email}</td>
+                  <td className="text-sm md:text-[16px]">
                     {user.role === "admin" ? (
                       "admin"
                     ) : (
-                      <button
-                        onClick={() => handleMakeAdmin(user)}
-                        className=""
-                      >
+                      <button onClick={() => handleMakeAdmin(user)}>
                         <FaUserShield className="text-lg" />
                       </button>
                     )}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-[15px] font-medium">
+                  <td className="text-sm md:text-[16px]">
                     <button
                       onClick={() => handleDelete(user)}
-                      className="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700"
+                      className="btn btn-ghost bg-red-600 text-white btn-md"
                     >
                       <FaTrashAlt className="text-lg" />
                     </button>
                   </td>
                 </tr>
               ))}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

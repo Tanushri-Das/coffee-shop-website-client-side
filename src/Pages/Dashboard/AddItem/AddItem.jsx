@@ -55,12 +55,12 @@ const AddService = () => {
   console.log("img_hosting_token", img_hosting_token);
   return (
     <div className="my-16">
-      <h1 className="text-black text-center text-3xl mb-6 font-bold">
+      <h1 className="text-black text-center text-xl sm:text-3xl mb-6 font-bold">
         Add New Item
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="form p-6 bg-white rounded-xl w-full lg:w-1/2 mx-auto"
+        className="form p-6 bg-white rounded-xl w-full md:w-3/4 lg:w-1/2 mx-auto"
       >
         <div className="mb-3">
           <label className="block text-black text-lg font-semibold mb-1">

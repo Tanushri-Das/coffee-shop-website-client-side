@@ -4,6 +4,7 @@
   padding: 8px 0;
   border-radius: 8px;
   margin-bottom: 20px;
+
 }
 
 .product-img {
@@ -39,4 +40,14 @@
   text-align: center; 
   border: none;
   outline: none;
+}
+@media (max-width: 500px) {
+  .product {
+    height: 550px;
+  }
+}
+@media (min-width: 700px) and (max-width: 870px) {
+  .product {
+    height: 550px;
+  }
 }

@@ -65,7 +65,7 @@ const Header = () => {
                     <li className="flex justify-center">
                       <button
                         onClick={handleLogout}
-                        className="btn btn-outline-primary text-xl text-white font-bold ps-5"
+                        className="text-xl text-white font-bold ps-5"
                       >
                         Logout
                       </button>
@@ -173,13 +173,13 @@ const Header = () => {
             </NavLink>
             {user ? (
               <>
-                <li className="lg:flex justify-center items-center text-lg text-white ps-2 pt-5">
+                <li className="lg:flex justify-center items-center text-lg font-bold text-white ps-2">
                   {user?.displayName}
                 </li>
-                <li className="lg:flex justify-center pt-5">
+                <li className="lg:flex justify-center pt-3">
                   <button
                     onClick={handleLogout}
-                    className="btn btn-outline-primary text-lg ms-3"
+                    className="text-xl text-white ps-2"
                   >
                     Logout
                   </button>

@@ -58,12 +58,14 @@ const AddReview = () => {
   };
   console.log("img_hosting_token", img_hosting_token);
   return (
-    <div className="mt-10">
-      <h3 className="text-3xl text-center mb-3">Give Review</h3>
-      <div className="w-full flex-shrink-0 sm:max-w-xl bg-white mx-auto">
-        <form
+    <div className="my-16">
+      
+      <h1 className="text-black text-center text-xl sm:text-3xl mb-6 font-bold">
+      Give Review
+      </h1>
+      <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-6 form bg-white rounded-xl"
+          className="form p-6 bg-white rounded-xl w-full md:w-3/4 lg:w-1/2 mx-auto"
         >
           <div className="mb-1">
             <label className="block text-black text-lg font-bold mb-1">
@@ -143,7 +145,6 @@ const AddReview = () => {
             </button>
           </div>
         </form>
-      </div>
     </div>
   );
 };

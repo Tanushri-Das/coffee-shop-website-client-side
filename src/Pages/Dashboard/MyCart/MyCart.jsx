@@ -44,18 +44,6 @@ const MyCart = () => {
   const total = calculateTotal();
   const formattedTotal = total.toFixed(2);
 
-  //   const handleModifyQuantity = (itemId, quantityDelta) => {
-  //     // Dispatch the modifyQuantity action
-  //     dispatch(modifyQuantity({ itemId, quantityDelta }));
-
-  //     const newQuantities = {
-  //       ...itemQuantities,
-  //       [itemId]: (itemQuantities[itemId] || 0) + quantityDelta,
-  //     };
-  //     setItemQuantities(newQuantities);
-  //     updateLocalStorage(newQuantities);
-  //   };
-
   const handleModifyQuantity = (itemId, quantityDelta) => {
     // Dispatch the modifyQuantity action
     dispatch(modifyQuantity({ itemId, quantityDelta }));
@@ -84,9 +72,12 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://coffee-shop-website-server-side.vercel.app/carts/${item._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://coffee-shop-website-server-side.vercel.app/carts/${item._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -106,60 +97,57 @@ const MyCart = () => {
   };
 
   return (
-    <div>
-      <div className="font-bold uppercase flex justify-center mt-16 items-center">
-        <h3 className="text-3xl">My Cart</h3>
-      </div>
-      <div className="mt-10">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Product Name</th>
-              <th>Product Image</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((item, index) => (
-              <tr key={item._id}>
-                <td>{index + 1}</td>
-                <td>{item.item_name}</td>
-                <td className="flex justify-center">
-                  <img src={item.image} alt="" />
-                </td>
-                <td className="quantity">
-                  <div className="flex justify-center">
-                    <FaMinus
-                      onClick={() => handleModifyQuantity(item._id, -1)}
-                      className="quantity-icon"
-                    />
-                    <span className="mx-5">
-                      {itemQuantities[item._id] || 0}
-                    </span>
-                    <FaPlus
-                      onClick={() => handleModifyQuantity(item._id, 1)}
-                      className="quantity-icon"
-                    />
-                  </div>
-                </td>
-                <td className="price">
-                  ${(item.price * itemQuantities[item._id]).toFixed(2)}
-                </td>
-                <td className="action">
-                  <button
-                    onClick={() => handleDelete(item)}
-                    className="delete-btn"
-                  >
-                    <FaTrashAlt />
-                  </button>
-                </td>
+    <div className="my-10">
+      <h3 className="text-xl md:text-3xl text-center mb-8">My Cart</h3>
+      <div className="overflow-x-auto">
+        <div className="w-full md:w-10/12 mx-auto">
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th className="text-sm md:text-[16px]">No.</th>
+                <th className="text-sm md:text-[16px]">Product Name</th>
+                <th className="text-sm md:text-[16px]">Quantity</th>
+                <th className="text-sm md:text-[16px]">Price</th>
+                <th className="text-sm md:text-[16px]">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {cart.map((item, index) => (
+                <tr key={item._id}>
+                  <td className="text-sm md:text-[16px]">{index + 1}</td>
+                  <td className="text-sm md:text-[16px]">{item.item_name}</td>
+
+                  <td className="quantity text-sm md:text-[16px]">
+                    <div className="flex justify-center">
+                      <FaMinus
+                        onClick={() => handleModifyQuantity(item._id, -1)}
+                        className="quantity-icon"
+                      />
+                      <span className="mx-5">
+                        {itemQuantities[item._id] || 0}
+                      </span>
+                      <FaPlus
+                        onClick={() => handleModifyQuantity(item._id, 1)}
+                        className="quantity-icon"
+                      />
+                    </div>
+                  </td>
+                  <td className="price text-sm md:text-[16px]">
+                    ${(item.price * itemQuantities[item._id]).toFixed(2)}
+                  </td>
+                  <td className="action text-sm md:text-[16px]">
+                    <button
+                      onClick={() => handleDelete(item)}
+                      className="delete-btn"
+                    >
+                      <FaTrashAlt />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <p className="total">Total Amount: ${formattedTotal}</p>
     </div>

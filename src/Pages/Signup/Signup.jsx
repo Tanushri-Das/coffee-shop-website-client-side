@@ -94,7 +94,7 @@ const SignUp = () => {
     console.log(data);
   };
   return (
-    <div className="flex justify-center items-center my-16">
+    <div className="flex justify-center items-center my-16 p-4">
       <div className="w-full flex-shrink-0 sm:max-w-2xl bg-base-100 mx-auto">
         <form
           className="form p-6 bg-white rounded-xl"
@@ -103,7 +103,7 @@ const SignUp = () => {
           <h1 className="text-black text-center text-3xl mb-6 font-bold">
             Sign Up
           </h1>
-          <div className="grid grid-cols-2 gap-5 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-2">
             <div>
               <label className="block text-black text-[16px] font-semibold mb-1">
                 Name
@@ -157,7 +157,7 @@ const SignUp = () => {
               </span>
             )}
           </div>
-          <div className="grid grid-cols-2 gap-5 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-2">
             <div>
               <label className="block text-black text-[16px] font-semibold mb-1">
                 Password

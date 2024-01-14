@@ -91,15 +91,6 @@ const Login = () => {
                 <label className="block text-black text-[16px] font-semibold">
                   Password
                 </label>
-                <label className="block text-black text-[16px] font-semibold">
-                  <a
-                    href="#"
-                    onClick={handleForgetPassword}
-                    className="text-primary"
-                  >
-                    Forgot password?
-                  </a>
-                </label>
               </div>
 
               <div className="relative">

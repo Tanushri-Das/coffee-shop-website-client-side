@@ -3,36 +3,31 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { AiFillHome } from "react-icons/ai";
 import {
   FaShoppingCart,
-  FaShoppingBag,
-  FaUsers,
-  FaUserPlus,
-  FaPlus,
-  FaGripHorizontal,
+  FaBars,
   FaUtensils,
   FaListUl,
+  FaUsers,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-
-import { MdReviews } from "react-icons/md";
 import useCart from "../Hooks/useCart";
 import useAdmin from "../Hooks/useAdmin";
-// import useAdmin from "../Hooks/useAdmin";
+import { MdReviews } from "react-icons/md";
 
 const Dashboard = () => {
-  const [open, setOpen] = useState(true);
   const [cart] = useCart();
-
   const [isAdmin] = useAdmin();
+
+  const [open, setOpen] = useState(true);
 
   // Function to check if the screen width is below a certain breakpoint
   const isSmallScreen = () => window.innerWidth <= 640; // You can adjust the breakpoint as needed
 
   return (
-    <section className="flex gap-6">
+    <section className="flex gap-4">
       <div
         className={`bg-[#a865b5] ${
-          open ? "w-60" : "w-16"
-        } duration-500 text-white font-semibold px-4`}
+          open ? "w-52" : "w-16"
+        } duration-500 text-gray-100 px-4 h-screen`}
       >
         <div className="py-3 flex justify-end">
           <HiMenuAlt3
@@ -46,51 +41,18 @@ const Dashboard = () => {
             {/* Sidebar content here */}
             {isAdmin ? (
               <>
-                {/* <li className="mb-5">
-                  <NavLink
-                    to="/dashboard/adminhome"
-                    activeClassName="active-link text-white"
-                    className="uppercase flex"
-                  >
-                    {isSmallScreen() ? (
-                      <AiFillHome className="text-lg mt-[2px] me-3" />
-                    ) : (
-                      <>
-                        <AiFillHome className="text-lg mt-[2px] me-3" />
-                        {open && "Admin Home"}
-                      </>
-                    )}
-                  </NavLink>
-                </li> */}
-                <li className="mb-5">
-                  <NavLink
-                    to="/dashboard/allusers"
-                    activeClassName="active-link"
-                    className="uppercase flex"
-                  >
-                    {isSmallScreen() ? (
-                      <FaUsers className="text-lg mt-[2px] me-3" />
-                    ) : (
-                      <>
-                        <FaUsers className="text-lg mt-[2px] me-3" />
-                        {open && "Users"}
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-
                 <li className="mb-5">
                   <NavLink
                     to="/dashboard/addItem"
                     activeClassName="active-link"
-                    className="uppercase flex"
+                    className="flex font-semibold"
                   >
                     {isSmallScreen() ? (
                       <FaUtensils className="text-lg mt-1 me-3" />
                     ) : (
                       <>
                         <FaUtensils className="text-lg mt-1 me-3" />
-                        {open && "add items"}
+                        {open && "Add Item"}
                       </>
                     )}
                   </NavLink>
@@ -99,14 +61,31 @@ const Dashboard = () => {
                   <NavLink
                     to="/dashboard/manageItems"
                     activeClassName="active-link"
-                    className="uppercase flex"
+                    className="font-semibold flex"
                   >
                     {isSmallScreen() ? (
                       <FaListUl className="text-lg mt-1 me-3" />
                     ) : (
                       <>
                         <FaListUl className="text-lg mt-1 me-3" />
-                        {open && "manage items"}
+                        {open && "Manage Items"}
+                      </>
+                    )}
+                  </NavLink>
+                </li>
+
+                <li className="mb-5">
+                  <NavLink
+                    to="/dashboard/allusers"
+                    activeClassName="active-link"
+                    className="font-semibold flex"
+                  >
+                    {isSmallScreen() ? (
+                      <FaUsers className="text-lg mt-[2px] me-3" />
+                    ) : (
+                      <>
+                        <FaUsers className="text-lg mt-[2px] me-3" />
+                        {open && "All Users"}
                       </>
                     )}
                   </NavLink>
@@ -163,12 +142,12 @@ const Dashboard = () => {
               </>
             )}
 
-            <div className="divider"></div>
+            <hr className="mb-5" />
             <li className="mb-5">
               <NavLink
                 to="/"
                 activeClassName="active-link"
-                className="uppercase flex"
+                className="font-semibold flex"
               >
                 {isSmallScreen() ? (
                   <AiFillHome className="text-lg mt-[2px] me-3" />
@@ -180,10 +159,26 @@ const Dashboard = () => {
                 )}
               </NavLink>
             </li>
+            <li className="mb-5">
+              <NavLink
+                to="/menu"
+                activeClassName="active-link"
+                className="font-semibold flex"
+              >
+                {isSmallScreen() ? (
+                  <FaBars className="text-lg mt-[2px] me-3" />
+                ) : (
+                  <>
+                    <FaBars className="text-lg mt-1 me-3" />
+                    {open && "Menu"}
+                  </>
+                )}
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold md:w-3/4 mx-auto">
+      <div className="my-3 text-xl text-gray-900 font-semibold w-full">
         <Outlet />
       </div>
     </section>

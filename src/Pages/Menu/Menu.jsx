@@ -136,13 +136,25 @@ const Menu = () => {
       });
     }
   };
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 992);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 992);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div>
       <div className="flex">
-        <div className="flex flex-col  p-4 md:py-5 md:px-8 xl:py-8 xl:px-10 bg-gray-200">
+        <div className="flex flex-col p-2 sm:p-4 md:py-5 md:px-8 xl:py-8 xl:px-10 bg-gray-200">
           <div className="flex flex-col items-start">
-            <h2 className="text-xl font-bold mb-3">Category</h2>
+            <h2 className="text-[16px] sm:text-xl font-bold mb-3">Category</h2>
             <div className="flex justify-center items-center mb-2">
               <input
                 type="radio"
@@ -154,7 +166,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="coffee"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Coffee
               </label>
@@ -170,7 +182,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="sandwich"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Sandwich
               </label>
@@ -184,7 +196,10 @@ const Menu = () => {
                 checked={selectedCategory === "pizza"}
                 onChange={() => setSelectedCategory("pizza")}
               />
-              <label htmlFor="pizza" className="ms-1 text-[16px] font-semibold">
+              <label
+                htmlFor="pizza"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
+              >
                 Pizza
               </label>
             </div>
@@ -197,7 +212,10 @@ const Menu = () => {
                 checked={selectedCategory === "fried"}
                 onChange={() => setSelectedCategory("fried")}
               />
-              <label htmlFor="fried" className="ms-1 text-[16px] font-semibold">
+              <label
+                htmlFor="fried"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
+              >
                 Fried
               </label>
             </div>
@@ -212,7 +230,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="burger"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Burger
               </label>
@@ -228,7 +246,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="dessert"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Dessert
               </label>
@@ -244,14 +262,14 @@ const Menu = () => {
               />
               <label
                 htmlFor="drinks"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Drinks
               </label>
             </div>
           </div>
           <div className="flex flex-col items-start">
-            <h2 className="text-xl font-bold mb-3">Price</h2>
+            <h2 className="text-[16px] sm:text-xl font-bold mb-3">Price</h2>
             <div className="flex justify-center items-center mb-2">
               <input
                 type="radio"
@@ -262,7 +280,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="price-All"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 All
               </label>
@@ -277,7 +295,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="price-0-40"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 0$-40$
               </label>
@@ -292,7 +310,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="price-40-80"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 40$-80$
               </label>
@@ -307,7 +325,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="price-80-120"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 80$-120$
               </label>
@@ -322,7 +340,7 @@ const Menu = () => {
               />
               <label
                 htmlFor="price-Over-120"
-                className="ms-1 text-[16px] font-semibold"
+                className="ms-1 text-sm sm:text-[16px] font-semibold"
               >
                 Over 120$
               </label>
@@ -330,8 +348,10 @@ const Menu = () => {
           </div>
         </div>
 
-        <div className="flex-1 px-4 py-12">
-          <h2 className="text-3xl font-bold text-center mb-5">Products</h2>
+        <div className="flex-1 px-2  py-12">
+          <h2 className="text-xl sm:text-3xl font-bold text-center mb-5">
+            Products
+          </h2>
           <div className="w-full md:w-[500px] mx-auto mb-8">
             <div className="relative flex items-center w-full h-12 rounded-lg shadow-lg bg-white overflow-hidden">
               <div className="grid place-items-center h-full w-12 text-gray-300">
@@ -367,7 +387,7 @@ const Menu = () => {
               )}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mx-2 md:mx-10 xl:mx-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 md:mx-4 xl:mx-20">
             {filteredAndPaginatedMenu.map((product) => {
               return (
                 <div key={product.id} className="product">
@@ -377,7 +397,7 @@ const Menu = () => {
                     className="product-img"
                   />
                   <div className="mt-5 px-4">
-                    <p className="text-xl mb-3 text-center font-semibold">
+                    <p className="text-[16px] sm:text-xl mb-3 text-center font-semibold">
                       {product.item_name}
                     </p>
                     <p className="text-[16px] mb-2 text-center font-medium">
@@ -387,7 +407,7 @@ const Menu = () => {
                   <div className="mt-20">
                     <div className="btn-div">
                       <button
-                        className="add-to-cart text-lg"
+                        className="add-to-cart text-[16px] sm:text-lg"
                         onClick={() => handleAddToCart(product)}
                       >
                         Add to Cart
@@ -400,56 +420,90 @@ const Menu = () => {
           </div>
 
           <div className="flex justify-center mt-4">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              className={`pagination-btn ${
-                isPrevDisabled ? "cursor-not-allowed" : ""
-              } px-4 py-2 rounded-l-md text-lg font-semibold ${
-                isPrevDisabled ? "text-gray-400" : "text-gray-900"
-              } flex items-center`}
-              disabled={isPrevDisabled}
-            >
-              <FaArrowLeft className="mr-2" /> Previous
-            </button>
-
-            {Array.from(
-              { length: Math.ceil(menu.length / itemsPerPage) },
-              (_, index) => (
+            {isSmallScreen ? (
+              <>
                 <button
-                  key={index + 1}
-                  onClick={() => handlePageChange(index + 1)}
-                  className={`pagination-btn text-lg font-semibold ${
-                    currentPage === index + 1
-                      ? "bg-blue-500 text-white rounded-lg"
-                      : "bg-white text-blue-500"
-                  } px-4 py-2 ${index === 0 ? "" : ""} ${
-                    index === Math.ceil(menu.length / itemsPerPage) - 1
-                      ? ""
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  className={`pagination-btn ${
+                    isPrevDisabled ? "cursor-not-allowed" : ""
+                  } px-4 py-2 rounded-l-md text-[16px] font-semibold ${
+                    isPrevDisabled ? "text-gray-400" : "text-gray-900"
+                  } flex items-center`}
+                  disabled={isPrevDisabled}
+                >
+                  <FaArrowLeft className="mr-2" /> Prev
+                </button>
+
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  className={`pagination-btn text-[16px] font-semibold ${
+                    isNextDisabled ? "cursor-not-allowed" : ""
+                  } px-4 py-2 ${
+                    currentPage === Math.ceil(menu.length / itemsPerPage)
+                      ? "rounded-r-md"
                       : ""
                   } ${
-                    currentPage === index + 1 ? "text-white" : "text-blue-500"
-                  }`}
+                    isNextDisabled ? "text-gray-400" : "text-gray-900"
+                  } flex items-center`}
+                  disabled={isNextDisabled}
                 >
-                  {index + 1}
+                  Next <FaArrowRight className="ml-2" />
                 </button>
-              )
+              </>
+            ) : (
+              <div className="flex">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  className={`pagination-btn ${
+                    isPrevDisabled ? "cursor-not-allowed" : ""
+                  } px-4 py-2 rounded-l-md text-[16px] font-semibold ${
+                    isPrevDisabled ? "text-gray-400" : "text-gray-900"
+                  } flex items-center`}
+                  disabled={isPrevDisabled}
+                >
+                  <FaArrowLeft className="mr-1" /> Prev
+                </button>
+                {Array.from(
+                  { length: Math.ceil(menu.length / itemsPerPage) },
+                  (_, index) => (
+                    <button
+                      key={index + 1}
+                      onClick={() => handlePageChange(index + 1)}
+                      className={`pagination-btn text-[16px] font-semibold ${
+                        currentPage === index + 1
+                          ? "bg-blue-500 text-white rounded-lg"
+                          : "bg-white text-blue-500"
+                      } px-4 py-2 ${index === 0 ? "rounded-l-md" : ""} ${
+                        index === Math.ceil(menu.length / itemsPerPage) - 1
+                          ? "rounded-r-md"
+                          : ""
+                      } ${
+                        currentPage === index + 1
+                          ? "text-white"
+                          : "text-blue-500"
+                      }`}
+                    >
+                      {index + 1}
+                    </button>
+                  )
+                )}
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  className={`pagination-btn text-[16px] font-semibold ${
+                    isNextDisabled ? "cursor-not-allowed" : ""
+                  } px-4 py-2 ${
+                    currentPage === Math.ceil(menu.length / itemsPerPage)
+                      ? "rounded-r-md"
+                      : ""
+                  } ${
+                    isNextDisabled ? "text-gray-400" : "text-gray-900"
+                  } flex items-center`}
+                  disabled={isNextDisabled}
+                >
+                  Next <FaArrowRight className="ml-1" />
+                </button>
+              </div>
             )}
-
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              className={`pagination-btn text-lg font-semibold ${
-                isNextDisabled ? "cursor-not-allowed" : ""
-              } px-4 py-2 ${
-                currentPage === Math.ceil(menu.length / itemsPerPage)
-                  ? "rounded-r-md"
-                  : ""
-              } ${
-                isNextDisabled ? "text-gray-400" : "text-gray-900"
-              } flex items-center`}
-              disabled={isNextDisabled}
-            >
-              Next <FaArrowRight className="ml-2" />
-            </button>
           </div>
         </div>
       </div>
