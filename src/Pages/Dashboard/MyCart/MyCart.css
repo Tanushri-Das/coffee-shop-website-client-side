@@ -1,4 +1,7 @@
-table {
+/* MyCart.css */
+
+/* Table styling */
+.table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
@@ -15,6 +18,7 @@ th {
   background-color: #f2f2f2;
 }
 
+/* Image styles */
 img {
   width: 50px;
   height: 50px;
@@ -22,11 +26,13 @@ img {
   object-fit: cover;
 }
 
+/* Quantity decrease icon styles */
 .qty-decrease {
   cursor: pointer;
   font-size: 14px;
 }
 
+/* Remove button styles */
 .remove {
   background-color: #f44336;
   color: white;
@@ -38,15 +44,17 @@ img {
   border-radius: 5px;
 }
 
+.remove:hover {
+  background-color: #d32f2f;
+}
+
+/* Quantity input styles */
 .qty {
   margin: 0 15px;
   font-size: 18px;
 }
 
-.remove:hover {
-  background-color: #d32f2f;
-}
-
+/* Total amount styles */
 .total {
   font-size: 20px;
   text-align: center;
@@ -54,59 +62,44 @@ img {
   font-weight: 500;
 }
 
+/* Checkout text styles */
 .checkout-text {
   font-size: 26px;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.checklist-table {
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-  margin-bottom: 40px;
-}
-
+/* Table wrapper styles */
 .table-wrapper {
   overflow: auto;
   max-width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .checklist-table {
-    padding: 0 40px;
-  }
-
-  .qty-decrease {
-    font-size: 20px;
-  }
-}
-
+/* Media queries */
 @media (max-width: 767px) {
-  .checklist-table {
+  .table-wrapper {
     overflow-x: auto;
   }
 
-  table {
-    min-width: 100%;
+  /* Adjustments for smaller screens */
+  img {
+    width: 30px;
+    height: 30px;
   }
 
   .qty-decrease {
     font-size: 16px;
   }
-
-  img {
-    width: 30px;
-    height: 30px;
-  }
 }
 
 @media (max-width: 559px) {
+  /* Adjustments for even smaller screens */
   .qty-decrease,
   .qty {
     display: inline-block;
     margin: 10px 2px;
   }
+
   .qty {
     font-size: 14px;
   }

@@ -70,7 +70,7 @@ const Recommend = ({ recommend, isVisible }) => {
   return (
     <div
       key={recommend._id}
-      className={`product ${isVisible ? "fadeIn" : "hidden"}`}
+      className={`product ${isVisible ? "fadeIn" : "hidden"} hover:border-zinc-500 duration-300 hover:shadow-xl overflow-hidden`}
     >
       <img
         src={recommend.image}

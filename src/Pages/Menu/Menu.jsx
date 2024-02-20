@@ -104,8 +104,8 @@ const Menu = () => {
   }, []);
   return (
     <div className="mx-2 md:mx-4 lg:mx-12 py-12">
-      <div className="flex flex-col lg:flex-row">
-        <div className="flex flex-col p-2 sm:p-4 md:py-8 md:px-8">
+      <div className="flex flex-col xl:flex-row">
+        <div className="flex flex-col md:flex-row xl:flex-col justify-around xl:justify-start items-center xl:items-start p-2 sm:p-4 md:py-8 md:px-8">
           <div className="flex flex-col items-start">
             <h2 className="text-[16px] sm:text-xl font-bold mb-3">Category</h2>
             <div className="flex justify-center items-center mb-2">
@@ -133,7 +133,7 @@ const Menu = () => {
               "dessert",
               "drinks",
             ].map((cat) => (
-              <div key={cat} className="flex justify-center items-center mb-2">
+              <div key={cat} className="flex justify-center items-center capitalize mb-2">
                 <input
                   type="radio"
                   name="category"
@@ -151,8 +151,8 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <div className="flex flex-col items-start mt-5">
-            <h2 className="text-[16px] sm:text-xl font-bold mb-3">Price</h2>
+          <div className="flex flex-col items-center xl:items-start mt-5">
+            <h2 className="text-[16px] text-center sm:text-xl font-bold mb-3">Price</h2>
             <div className="flex justify-center items-center mb-2">
               <input
                 type="number"
@@ -160,7 +160,7 @@ const Menu = () => {
                 placeholder="min"
                 value={minPrice}
                 onChange={(e) => setMinPrice(e.target.value)}
-                className="w-14 sm:w-20 h-10 border-2 border-gray-200 ps-1 focus:outline-none"
+                className="w-16 sm:w-20 h-10 border-2 border-gray-200 ps-1 focus:outline-none"
               />
               <FaMinus className="mx-2" />
               <input
@@ -169,7 +169,7 @@ const Menu = () => {
                 placeholder="max"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
-                className="w-14 sm:w-20 h-10 border-2 border-gray-200 me-2 ps-1 focus:outline-none"
+                className="w-16 sm:w-20 h-10 border-2 border-gray-200 me-2 ps-1 focus:outline-none"
               />
               <button
                 onClick={handlePriceFilterApply}
@@ -181,7 +181,7 @@ const Menu = () => {
           </div>
         </div>
 
-        <div className="flex-1 px-2">
+        <div className="flex-1 px-2 mt-8 md:mt-0">
           <h2 className="text-xl sm:text-3xl font-bold text-center mb-5">
             Food Items
           </h2>
@@ -220,7 +220,7 @@ const Menu = () => {
               )}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 md:mx-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 md:mx-3">
             {currentItems?.map((item) => (
               <Item key={item._id} item={item} />
             ))}

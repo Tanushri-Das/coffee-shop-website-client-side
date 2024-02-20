@@ -26,9 +26,12 @@ const Header = () => {
     <nav className="bg-black/75 py-2">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <h1 className="mr-10 text-xl lg:text-3xl text-white font-mono font-bold flex-shrink-0">
+          <NavLink
+            to="/"
+            className="mr-10 text-xl lg:text-3xl text-white font-mono font-bold flex-shrink-0"
+          >
             Sip Coffee
-          </h1>
+          </NavLink>
           <div className="flex items-center">
             <div className="hidden lg:block ml-auto">
               <div className="flex justify-center space-x-4">

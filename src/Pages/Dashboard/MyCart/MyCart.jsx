@@ -99,7 +99,7 @@ const MyCart = () => {
   return (
     <div className="my-10">
       <h3 className="text-xl md:text-3xl text-center mb-8">My Cart</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto table-container">
         <div className="w-full md:w-10/12 mx-auto">
           <table className="table text-center">
             <thead>
@@ -121,14 +121,14 @@ const MyCart = () => {
                     <div className="flex justify-center">
                       <FaMinus
                         onClick={() => handleModifyQuantity(item._id, -1)}
-                        className="quantity-icon"
+                        className="quantity-icon hover:cursor-pointer"
                       />
                       <span className="mx-5">
                         {itemQuantities[item._id] || 0}
                       </span>
                       <FaPlus
                         onClick={() => handleModifyQuantity(item._id, 1)}
-                        className="quantity-icon"
+                        className="quantity-icon hover:cursor-pointer"
                       />
                     </div>
                   </td>
