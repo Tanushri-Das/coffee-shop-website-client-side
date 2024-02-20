@@ -9,7 +9,17 @@
   transition: border-color 0.2s;
 }
 .form {
-    border-radius: 6px;
-    border: 1px solid #ababab;
-    background: rgba(255, 255, 255, 0.2);
-  }
+  border-radius: 6px;
+  border: 1px solid #ababab;
+  background: rgba(255, 255, 255, 0.2);
+}
+.login-btn {
+  border-radius: 5px;
+  background-color: #a865b5;
+  font-style: normal;
+  line-height: 24px;
+  padding: 10px 20px;
+  text-align: center; 
+  border: none;
+  outline: none;
+}

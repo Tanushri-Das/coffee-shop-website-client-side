@@ -35,7 +35,6 @@ const Header = () => {
                 <NavLink to="/" className="links text-white text-xl font-bold">
                   Home
                 </NavLink>
-                
                 <NavLink
                   to="/menu"
                   className="link text-xl text-white font-bold px-5"

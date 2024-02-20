@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import useAuth from "../../Hooks/useAuth";
-import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { login, forgetPassword } = useAuth();
@@ -65,9 +64,6 @@ const Login = () => {
   };
   return (
     <div>
-      <Helmet>
-        <title>Foodie's Paradise | Login</title>
-      </Helmet>
       <div className="flex justify-center items-center my-16">
         <div className="w-full flex-shrink-0 sm:max-w-lg bg-white mx-auto">
           <form onSubmit={handleLogin} className="form p-6 bg-white rounded-xl">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="my-20 mx-3 md:mx-12 xl:mx-20" id="about">
+    <div className="my-20 mx-3 md:mx-12 xl:mx-20">
       <h2 className="text-4xl font-bold mb-8 text-center">About Us</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
