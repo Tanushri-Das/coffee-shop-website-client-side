@@ -22,35 +22,48 @@ const Recommends = () => {
   );
 
   const handleNext = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex + 3 < recommendItems.length ? prevIndex + 3 : prevIndex
-    );
+    if (startIndex + 3 < recommendItems.length) {
+      setStartIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   const handlePrev = () => {
-    setStartIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 3 : prevIndex));
+    if (startIndex > 0) {
+      setStartIndex((prevIndex) => prevIndex - 1);
+    }
   };
+
+  const isNextDisabled = startIndex + 3 >= recommendItems.length;
+  const isPrevDisabled = startIndex === 0;
 
   return (
     <div className="mb-20 mx-3 md:mx-12 xl:mx-20">
-      <h2 className="text-4xl font-bold mb-3 text-center">Chef Recommends</h2>
+      <h2 className="text-4xl font-bold mb-8 md:mb-4 text-center">
+        Chef Recommends
+      </h2>
       <div className="flex justify-end items-center">
-        <div onClick={handlePrev} className="rounded-icon">
+        <div
+          onClick={handlePrev}
+          className={`rounded-icon ${isPrevDisabled ? "disabled" : ""}`}
+        >
           <FaArrowLeft />
         </div>
-        <div onClick={handleNext} className="rounded-icon">
+        <div
+          onClick={handleNext}
+          className={`rounded-icon ${isNextDisabled ? "disabled" : ""}`}
+        >
           <FaArrowRight />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-4">
         {recommendItems
           .slice(startIndex, startIndex + 3)
           .map((recommend, index) => (
             <Recommend
               key={recommend._id}
               recommend={recommend}
-              isVisible={index < 3}
+              isVisible={index === 0 || index === 1 || index === 2}
             />
           ))}
       </div>

@@ -6,3 +6,32 @@
   padding: 8px;
   margin: 0 5px;
 }
+.rounded-icon.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.fadeIn {
+  animation: fadeInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fadeOutAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

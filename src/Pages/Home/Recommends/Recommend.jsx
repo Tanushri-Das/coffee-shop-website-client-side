@@ -5,19 +5,22 @@ import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/cartSlice";
 import useCart from "../../../Hooks/useCart";
+import "./Recommends.css";
 
 const Recommend = ({ recommend, isVisible }) => {
-  console.log(recommend);
   const dispatch = useDispatch();
   const [, refetch] = useCart();
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+
   const handleAddToCart = (recommend) => {
     if (user && user.email) {
       const { _id, item_name, price, image } = recommend;
 
-      dispatch(addToCart({ _id, item_name, price, image, email: user.email })); 
+      dispatch(
+        addToCart({ _id, item_name, price, image, email: user.email })
+      );
 
       fetch("https://coffee-shop-website-server-side.vercel.app/carts", {
         method: "POST",
@@ -63,8 +66,12 @@ const Recommend = ({ recommend, isVisible }) => {
       });
     }
   };
+
   return (
-    <div key={recommend._id} className={`product ${isVisible ? "" : "hidden"}`}>
+    <div
+      key={recommend._id}
+      className={`product ${isVisible ? "fadeIn" : "hidden"}`}
+    >
       <img
         src={recommend.image}
         alt={recommend.item_name}
